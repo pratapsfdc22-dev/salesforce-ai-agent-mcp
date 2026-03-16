@@ -1,0 +1,30 @@
+{
+  "name": "salesforce-ai-agent-mcp",
+  "version": "1.0.0",
+  "description": "Production-grade MCP server for Salesforce Developer AI Agent — integrates Jira, Salesforce Tooling API, and n8n",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:sse": "node dist/index.js --sse",
+    "dev": "tsx src/index.ts",
+    "dev:sse": "tsx src/index.ts --sse",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

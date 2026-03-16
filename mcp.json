@@ -1,0 +1,75 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/spec/main/schema/mcp.schema.json",
+  "name": "salesforce-ai-agent-mcp",
+  "version": "1.0.0",
+  "description": "Production-grade MCP server for the Salesforce Developer AI Agent — integrates Jira Cloud, Salesforce Tooling API, and n8n workflows",
+  "author": "Salesforce AI Agent Team",
+  "license": "MIT",
+  "server": {
+    "command": "node",
+    "args": ["${workspaceFolder}/salesforce-ai-agent-mcp/dist/index.js"],
+    "env": {
+      "JIRA_BASE_URL": "${env:JIRA_BASE_URL}",
+      "JIRA_EMAIL": "${env:JIRA_EMAIL}",
+      "JIRA_API_TOKEN": "${env:JIRA_API_TOKEN}",
+      "SF_LOGIN_URL": "${env:SF_LOGIN_URL}",
+      "SF_CLIENT_ID": "${env:SF_CLIENT_ID}",
+      "SF_CLIENT_SECRET": "${env:SF_CLIENT_SECRET}",
+      "SF_USERNAME": "${env:SF_USERNAME}",
+      "SF_PASSWORD": "${env:SF_PASSWORD}",
+      "SF_SECURITY_TOKEN": "${env:SF_SECURITY_TOKEN}",
+      "N8N_BASE_URL": "${env:N8N_BASE_URL}",
+      "N8N_API_KEY": "${env:N8N_API_KEY}"
+    }
+  },
+  "tools": [
+    {
+      "name": "jira_get_story",
+      "description": "Fetch a Jira story by issue key"
+    },
+    {
+      "name": "jira_update_story_status",
+      "description": "Transition a Jira story to a new workflow status"
+    },
+    {
+      "name": "jira_post_comment",
+      "description": "Post a comment to a Jira story"
+    },
+    {
+      "name": "jira_search_stories",
+      "description": "Search Jira stories using JQL"
+    },
+    {
+      "name": "salesforce_get_object_fields",
+      "description": "Query all fields on a Salesforce object"
+    },
+    {
+      "name": "salesforce_create_custom_field",
+      "description": "Create a custom field on a Salesforce object"
+    },
+    {
+      "name": "salesforce_create_validation_rule",
+      "description": "Create a validation rule on a Salesforce object"
+    },
+    {
+      "name": "salesforce_deploy_metadata",
+      "description": "Trigger a Salesforce metadata deployment"
+    },
+    {
+      "name": "salesforce_get_deployment_status",
+      "description": "Poll a Salesforce deployment's status"
+    },
+    {
+      "name": "salesforce_query",
+      "description": "Execute a SOQL query against Salesforce"
+    },
+    {
+      "name": "n8n_trigger_workflow",
+      "description": "Trigger an n8n workflow via webhook URL"
+    },
+    {
+      "name": "n8n_get_execution_status",
+      "description": "Retrieve the status of an n8n workflow execution"
+    }
+  ]
+}
