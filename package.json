@@ -4,6 +4,30 @@
   "description": "Production-grade MCP server for Salesforce Developer AI Agent — integrates Jira, Salesforce Tooling API, and n8n",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "salesforce-ai-agent-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "mcp.json",
+    ".env.example"
+  ],
+  "keywords": [
+    "mcp",
+    "salesforce",
+    "jira",
+    "n8n",
+    "claude",
+    "ai-agent",
+    "model-context-protocol"
+  ],
+  "author": "pratapsfdc22-dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pratapsfdc22-dev/salesforce-ai-agent-mcp.git"
+  },
+  "homepage": "https://github.com/pratapsfdc22-dev/salesforce-ai-agent-mcp#readme",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -12,7 +36,8 @@
     "dev:sse": "tsx src/index.ts --sse",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
