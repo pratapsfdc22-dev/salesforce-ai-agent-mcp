@@ -10,7 +10,9 @@
     "start:sse": "node dist/index.js --sse",
     "dev": "tsx src/index.ts",
     "dev:sse": "tsx src/index.ts --sse",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
@@ -22,7 +24,8 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.7",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^2.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
